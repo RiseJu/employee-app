@@ -2,4 +2,5 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.0.
 ## How to start this project
-`npm i`
+`git clone https://github.com/RiseJu/employee-app`
+`cd employee-app && npm i`
