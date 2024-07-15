@@ -1,0 +1,22 @@
+.employee-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .employee-full-width {
+    width: 100%;
+  }
+  
+  td {
+    padding-right: 8px;
+  }
+
+  .employee-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .employee-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }

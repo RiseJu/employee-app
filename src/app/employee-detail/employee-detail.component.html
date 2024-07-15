@@ -1,0 +1,31 @@
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-chip (click)="GoBack()">Back</mat-chip>
+    
+   
+  </mat-card-header>
+  <mat-card-content>
+    <mat-card-title
+    >{{ employee.firstName }} {{ employee.lastName }}</mat-card-title
+  >
+    <mat-list role="list">
+      <mat-list-item role="listitem"
+        >Username : {{ employee.username }}</mat-list-item
+      >
+      <mat-list-item role="listitem"
+        >Email : {{ employee.email }}</mat-list-item
+      >
+      <mat-list-item role="listitem"
+        >Date of Birth : {{ employee.birthDate }}</mat-list-item
+      >
+    </mat-list>
+  </mat-card-content>
+  <!-- <mat-divider></mat-divider> -->
+  <mat-card-footer class="employee-card-footer">
+    <mat-chip-set aria-label="Chihuahua traits">
+      <mat-chip>{{ employee.basicSalary }}</mat-chip>
+      <mat-chip>{{ employee.status }}</mat-chip>
+      <mat-chip>{{ employee.group }}</mat-chip>
+    </mat-chip-set>
+  </mat-card-footer>
+</mat-card>

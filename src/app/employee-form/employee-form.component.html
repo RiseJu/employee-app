@@ -1,0 +1,108 @@
+<h1>{{ editIndex !== null ? "Edit" : "Add" }} Employee</h1>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <p>
+    <mat-form-field class="employee-full-width">
+      <mat-label>Username</mat-label>
+      <input matInput id="username" formControlName="username" />
+    </mat-form-field>
+  </p>
+
+  <table class="employee-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="employee-full-width">
+          <mat-label>First name</mat-label>
+          <input matInput id="firstName" formControlName="firstName" />
+          <!-- @if (employeeForm.firstName?.hasError('required')) {
+          <mat-error>First name <strong>required</strong></mat-error>
+          } -->
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="employee-full-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput id="lastName" formControlName="lastName" />
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <table class="employee-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="employee-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput id="email" formControlName="email" />
+          <!-- @if (employeeForm.get('email')?.invalid && employeeForm.get('email')?.hasError?.required) {
+            <mat-error>Email <strong>required</strong></mat-error>
+          }
+          @if (employeeForm.get('email')?.invalid && employeeForm.get('email')?.hasError?.mail) {
+            <mat-error>Email <strong>invalid</strong></mat-error>
+          } -->
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="employee-full-width">
+          <mat-label>Birth Date</mat-label>
+          <input type="date" matInput id="birthDate" formControlName="birthDate" />
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <mat-form-field class="employee-full-width">
+      <mat-label>Basic Salary</mat-label>
+      <input matInput id="basicSalary" formControlName="basicSalary" />
+    </mat-form-field>
+  </p>
+
+  <table class="employee-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select id="status" formControlName="status">
+            <mat-option value="active">Active</mat-option>
+            <mat-option value="inactive">Inactive</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field>
+          <mat-label>Group</mat-label>
+          <mat-select id="group" formControlName="group">
+            <mat-option value="finance">Finance</mat-option>
+            <mat-option value="marketing">Marketing</mat-option>
+            <mat-option value="sales">Sales</mat-option>
+            <mat-option value="rnd">Research and Development</mat-option>
+            <mat-option value="hr">Human Resource</mat-option>
+            <mat-option value="administration">Administration</mat-option>
+            <mat-option value="it">Information Technology</mat-option>
+            <mat-option value="operation">Operational</mat-option>
+            <mat-option value="cs">Customer Service</mat-option>
+            <mat-option value="legal">Legal</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    <mat-form-field class="employee-full-width">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        placeholder="Description"
+        id="description"
+        formControlName="description"
+      ></textarea>
+    </mat-form-field>
+  </p>
+  <div class="employee-button-row">
+    <button mat-flat-button type="submit" [disabled]="employeeForm.invalid">
+      {{ editIndex !== null ? "Update" : "Save" }}
+    </button>
+    <button mat-flat-button type="reset" routerLink="/employee">Cancel</button>
+  </div>
+</form>

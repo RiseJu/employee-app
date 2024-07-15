@@ -1,0 +1,9 @@
+<mat-card appearance="outlined">
+  <mat-card-content>
+    <h1>Employee List</h1>
+    <div class="my-button-container">
+      <button mat-fab (click)="addEmployee()">Add Employee</button>
+    </div>
+    <table datatable [dtOptions]="dtOptions" class="row-border hover"></table>
+  </mat-card-content>
+</mat-card>
